@@ -31,7 +31,7 @@ const CartBtn = ({ product }: PropsType) => {
   const { dispatch } = useCart();
   return (
     <SCartBtn onClick={() => dispatch({ type: "cart/add", payload: product })}>
-      <img alt="cart" src="../../public/images/icon-add-to-cart.svg" />
+      <img alt="cart" src="/images/icon-add-to-cart.svg" />
       <span>Add to Cart</span>
     </SCartBtn>
   );
