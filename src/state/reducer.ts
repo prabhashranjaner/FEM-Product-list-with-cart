@@ -8,14 +8,13 @@ export default function reducer(state: CartStateType, action: ActionType) {
     case "cart/remove":
       return state.filter((item) => item.product.id !== action.payload);
 
-    case "cart/update":
+    case "cart/update": {
       return state.map((item) => {
-        if (item.product.id === action.payload.id) {
-          if (action.payload.quantity > 0) {
-            return { ...item, quantity: action.payload.quantity };
-          } else return;
-        } else return item;
+        if (item.product.id === action.payload.id)
+          return { ...item, quantity: action.payload.quantity };
+        else return item;
       });
+    }
 
     case "cart/clear":
       return [];
